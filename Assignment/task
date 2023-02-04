@@ -1,0 +1,65 @@
+COMP 311 - PROGRAMMING IN JAVA
+Assignment 1 2022
+
+Instructions
+
+1. Answer all questions
+2. Submit your project before the deadline
+3. Plagiarism is not allowed
+4. The total marks for this assignment is 100
+1
+
+
+Question 1
+
+The ministry of Agriculture is looking to build an online system to register Farmers
+across the country. The ministry need to capture the following information about farmers:
+
+● ID number x
+● Full names x
+● Postal address x
+● gender x
+● Contact number x
+● Email address x
+● District x
+● Sub District x
+● Size of farm in Hectares x
+● Area available for farming (area debushed) in Hectares x
+
+You are to use this information to build a java application (console or graphical) for this purpose.
+Your farmer should be able to complete the registration form by providing the required field
+either through a GUI or a Command line application.
+
+There are two users of the system, the farmer and the admin.
+
+The farmer (25 Marks)
+The farmer should be able to do the following:
+
+a. Sign up and sign in
+b. Update the profile by providing the information requested
+c. Update their details
+
+The administrator ( 25 Marks)
+The admin should be able to do the following:
+
+a. Approve or decline any registration request
+b. View all registered farmers
+c. Edit or delete farmers
+
+Report (20 Marks)
+● The application should allow the admin to print a list of all the farmers to a txt file
+● Apply a filter to only show farmers belonging to a certain District or sub district
+● Provide a filter to only print farmers of a certain gender
+2
+
+Pointers:
+1. Feel free to use any data structure to store your information
+2. The only database you are allowed to use is MYSQL
+3. Your reports can be in the form of a text file
+4. 30 Marks will be allocated for innovation. Going the extra mile to show
+
+understanding and external research capabilities.
+5. The total marks for the assignment is 100
+6. You will demonstrate your assignment to your lecturer and also submit the zip file
+to a link on blackboard.
+7. The deadline for submission is 29 October 2022 at 2359hrs
