@@ -1,0 +1,13 @@
+FarmersBW - Registered farmers report
+Filter:    District: Central
+Generated: 14 Nov 2026, 10:30
+
+ID number  Name               Gender  Contact   Email                           District  Sub-district  Farm (ha)  Farming (ha)  Status
+---------  -----------------  ------  --------  ------------------------------  --------  ------------  ---------  ------------  --------
+100285084  Mpho Mothibi       Male    71044532  mpho.mothibi36@example.com      Central   Bobirwa             230            74  Approved
+100015838  Keabetswe Sekgoma  Female  71002474  keabetswe.sekgoma2@example.com  Central   Bobirwa             470           314  Approved
+100190056  Thabo Kebonang     Male    71029688  thabo.kebonang24@example.com    Central   Paje                105            91  Approved
+100261327  Dineo Kgosi        Female  71040821  dineo.kgosi33@example.com       Central   Rakops              430           340  Approved
+100126704  Masego Ramotswe    Female  71019792  masego.ramotswe16@example.com   Central   Taupye              370           168  Approved
+
+5 farmers, 1,605 ha of farmland, 987 ha available for farming.

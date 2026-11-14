@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/golfybg"
+    tools:context=".DashboardActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Farmers Botswana"
+        android:fontFamily="@font/muli"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/card1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home"
+            android:padding="10dp"
+            android:text="HOME"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/registration"
+            android:padding="10dp"
+            android:text="REGISTRATION"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/profile"
+            android:padding="10dp"
+            android:text="PROFILE"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:onClick="nav"
+            android:drawableTop="@drawable/stats"
+            android:padding="10dp"
+            android:text="STATS"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/fixtures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/fixtures"
+            android:padding="10dp"
+            android:onClick="nav"
+            android:text="FIXTURES AND LEADERBOARDS"
+            android:background="#94018786"
+            android:backgroundTint="#FAE9F019"
+            android:textColor="@color/color_accent" />
+
+
+        <Button
+            android:id="@+id/payments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="nav"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/payments"
+            android:padding="10dp"
+            android:text="PAYMENTS"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/media"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/livestreams"
+            android:padding="10dp"
+            android:text="MEDIA"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/donations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:onClick="nav"
+            android:drawableTop="@drawable/donations"
+            android:padding="10dp"
+            android:text="DONATIONS"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sponsors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/sponsors"
+            android:padding="10dp"
+            android:text="SPONSORS"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/bets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:onClick="nav"
+            android:drawableTop="@drawable/bets"
+            android:padding="10dp"
+            android:text="BETS"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/settings"
+            android:padding="10dp"
+            android:text="SETTINGS"
+            android:onClick="nav"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:onClick="nav"
+            android:drawableTop="@drawable/logout"
+            android:padding="10dp"
+            android:text="LOG OUT"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

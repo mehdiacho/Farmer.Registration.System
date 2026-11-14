@@ -386,7 +386,7 @@ public class UpdateFrame extends JFrame implements ActionListener, ItemListener 
                 subList = new String[]{"Goodhope", "Jwaneng", "Kanye", "Mabutsane", "Moshupa"};
                 break;
 
-            case default:
+            default:
                 subList = new String[]{"Bobirwa", "Boteti", "Lerala", "Mahalapye"};
                 break;
         }
