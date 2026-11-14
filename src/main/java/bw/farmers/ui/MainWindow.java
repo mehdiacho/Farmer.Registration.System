@@ -21,8 +21,12 @@ public final class MainWindow extends JFrame implements Navigator {
         this.service = service;
         this.login = new LoginPanel(service, this);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(760, 560));
-        setSize(1100, 760);
+        setIconImages(Logo.windowIcons());
+        getRootPane().putClientProperty("JRootPane.titleBarBackground", Ui.SURFACE);
+        getContentPane().setBackground(Ui.SAND);
+        setMinimumSize(new Dimension(com.formdev.flatlaf.util.UIScale.scale(940),
+                com.formdev.flatlaf.util.UIScale.scale(640)));
+        setSize(com.formdev.flatlaf.util.UIScale.scale(1320), com.formdev.flatlaf.util.UIScale.scale(860));
         setLocationRelativeTo(null);
         showLogin();
     }
@@ -38,15 +42,15 @@ public final class MainWindow extends JFrame implements Navigator {
         swap(new RegisterPanel(service, this, email -> {
             showLogin();
             login.prefill(email);
-        }), "FarmersBW - Register");
+        }), "FarmersBW · Register your farm");
     }
 
     @Override
     public void showHome(User user) {
         if (user.admin()) {
-            swap(new AdminPanel(service, user, this), "FarmersBW - Admin");
+            swap(new AdminPanel(service, user, this), "FarmersBW · Admin");
         } else {
-            swap(new FarmerHomePanel(service, user, this), "FarmersBW - My registration");
+            swap(new FarmerHomePanel(service, user, this), "FarmersBW · My registration");
         }
     }
 

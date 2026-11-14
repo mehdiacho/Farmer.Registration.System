@@ -74,30 +74,66 @@ public final class Screenshots {
             }
         };
 
+        shoot(banner(), 1280, 360, out.resolve("banner.png"));
+
         LoginPanel login = new LoginPanel(service, nav);
         login.prefill("admin@example.com");
-        shoot(login, 960, 600, out.resolve("login.png"));
+        shoot(login, 1280, 800, out.resolve("login.png"));
 
         RegisterPanel register = new RegisterPanel(service, nav, email -> { });
         Farmer f = Fixtures.farmer("310992458", "thabo.kgosi@example.com", "76234519");
         register.form().show(new Farmer(f.idNumber(), "Thabo", "Kgosi", f.contact(), LocalDate.of(1984, 3, 9),
                 Gender.MALE, "Private Bag 12, Tutume", "Central", "Tutume", f.email(), 60, 55, Status.PENDING));
-        shoot(register, 960, 820, out.resolve("register.png"));
+        shoot(register, 1280, 900, out.resolve("register.png"));
 
-        shoot(new FarmerHomePanel(service, farmer, nav), 960, 820, out.resolve("farmer-profile.png"));
+        shoot(new FarmerHomePanel(service, farmer, nav), 1280, 900, out.resolve("farmer-profile.png"));
 
         AdminPanel adminPanel = new AdminPanel(service, admin, nav);
-        shoot(adminPanel, 1200, 720, out.resolve("admin-registrations.png"));
+        adminPanel.selectTab(0);
+        shoot(adminPanel, 1360, 1080, out.resolve("admin-overview.png"));
 
         adminPanel.selectTab(1);
+        adminPanel.registrationsTable().setRowSelectionInterval(1, 2);
+        shoot(adminPanel, 1360, 860, out.resolve("admin-registrations.png"));
+
+        adminPanel.selectTab(2);
         adminPanel.reportDistrict("Central");
-        shoot(adminPanel, 1200, 520, out.resolve("admin-reports.png"));
+        shoot(adminPanel, 1360, 860, out.resolve("admin-reports.png"));
+
+        Database fresh = Database.inMemory();
+        AdminSetupDialog setup = new AdminSetupDialog(null, new FarmerService(fresh), () -> { });
+        JComponent setupBody = (JComponent) setup.getContentPane();
+        java.awt.Dimension size = setupBody.getPreferredSize();
+        setup.dispose();
+        shoot(setupBody, size.width / SCALE, size.height / SCALE, out.resolve("first-run.png"));
+        fresh.close();
 
         // A sample of the plain-text report the admin exports.
         ReportFilter central = new ReportFilter("Central", null, null, null);
         ReportWriter.write(out.getParent().resolve("sample-report.txt"), service.list(central), central,
                 LocalDateTime.of(2026, 11, 14, 10, 30));
         db.close();
+    }
+
+    /** The README's header picture: the landscape with the name over it. */
+    private static JComponent banner() {
+        Landscape banner = new Landscape(new java.awt.GridBagLayout(), 0.95f, 0.22f);
+        java.awt.GridBagConstraints c = new java.awt.GridBagConstraints();
+        c.gridx = 0;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.anchor = java.awt.GridBagConstraints.SOUTHEAST;
+        c.insets = new java.awt.Insets(0, 0, 0, 64 * SCALE);
+        javax.swing.JLabel name = Ui.text("FarmersBW", Ui.display(54), java.awt.Color.WHITE);
+        name.setIcon(Logo.icon(64));
+        name.setIconTextGap(18 * SCALE);
+        banner.add(name, c);
+        c.weighty = 0;
+        c.anchor = java.awt.GridBagConstraints.NORTHEAST;
+        c.insets = new java.awt.Insets(6 * SCALE, 0, 40 * SCALE, 64 * SCALE);
+        banner.add(Ui.text("Every farm in Botswana, on one register.", Ui.font(java.awt.Font.PLAIN, 21),
+                new java.awt.Color(255, 248, 234, 225)), c);
+        return banner;
     }
 
     private static void shoot(JComponent screen, int width, int height, Path file) throws Exception {

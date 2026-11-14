@@ -12,6 +12,8 @@ repositories {
 dependencies {
     implementation("org.xerial:sqlite-jdbc:3.51.0.0")
     implementation("com.formdev:flatlaf:3.5.4")
+    implementation("com.formdev:flatlaf-extras:3.5.4")
+    implementation("com.formdev:flatlaf-fonts-inter:4.0")
     runtimeOnly("org.slf4j:slf4j-nop:2.0.17")
 
     testImplementation(platform("org.junit:junit-bom:6.1.3"))

@@ -23,18 +23,18 @@ public final class FarmerForm extends JPanel {
 
     private static final long serialVersionUID = 1L;
 
-    private final JTextField idNumber = text("9 digits");
+    private final JTextField idNumber = Ui.withIcon(text("9 digits"), "idcard");
     private final JTextField firstName = text(null);
     private final JTextField lastName = text(null);
-    private final JTextField contact = text("e.g. 71234567");
+    private final JTextField contact = Ui.withIcon(text("e.g. 71234567"), "phone");
     private final JSpinner dateOfBirth;
     private final JComboBox<Gender> gender = new JComboBox<>(Gender.values());
-    private final JTextField postalAddress = text("e.g. PO Box 101, Gaborone");
-    private final JTextField email = text("name@example.com");
+    private final JTextField postalAddress = Ui.withIcon(text("e.g. PO Box 101, Gaborone"), "pin");
+    private final JTextField email = Ui.withIcon(text("name@example.com"), "mail");
     private final JComboBox<String> district = new JComboBox<>(Districts.all().toArray(String[]::new));
     private final JComboBox<String> subDistrict = new JComboBox<>();
-    private final JTextField farmSize = text("hectares");
-    private final JTextField farmingArea = text("hectares");
+    private final JTextField farmSize = Ui.withUnit(Ui.withIcon(text("0"), "map"), "ha");
+    private final JTextField farmingArea = Ui.withUnit(Ui.withIcon(text("0"), "sprout"), "ha");
 
     public FarmerForm() {
         super(new GridBagLayout());
@@ -49,12 +49,16 @@ public final class FarmerForm extends JPanel {
         refreshSubDistricts();
 
         new Ui.Grid(this, 2)
+                .section("About you", "As it appears on your Omang.", "user")
                 .field("Omang ID number", idNumber).field("Date of birth", dateOfBirth)
                 .field("First name", firstName).field("Last name", lastName)
-                .field("Gender", gender).field("Contact number", contact)
-                .field("Email address", email).field("Postal address", postalAddress)
+                .field("Gender", gender)
+                .section("Contact", "How the Ministry reaches you.", "phone")
+                .field("Contact number", contact).field("Email address", email)
+                .field("Postal address", postalAddress, 2)
+                .section("Your farm", "Where it is, and how much of it you farm.", "map")
                 .field("District", district).field("Sub-district", subDistrict)
-                .field("Farm size (ha)", farmSize).field("Area available for farming (ha)", farmingArea);
+                .field("Farm size", farmSize).field("Area available for farming", farmingArea);
     }
 
     private static JTextField text(String placeholder) {

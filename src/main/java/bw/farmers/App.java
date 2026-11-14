@@ -2,12 +2,12 @@ package bw.farmers;
 
 import bw.farmers.db.Database;
 import bw.farmers.demo.DemoData;
+import bw.farmers.model.ReportFilter;
 import bw.farmers.service.FarmerService;
 import bw.farmers.ui.AdminSetupDialog;
 import bw.farmers.ui.MainWindow;
 import bw.farmers.ui.Ui;
 
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.nio.file.Path;
 
@@ -55,12 +55,15 @@ public final class App {
             Ui.installLookAndFeel();
             MainWindow window = new MainWindow(service);
             if (service.needsAdminSetup()) {
-                AdminSetupDialog setup = new AdminSetupDialog(null, service);
+                // On a brand-new install, offer fictional farmers so there is something to look at.
+                Runnable sample = service.list(ReportFilter.ALL).isEmpty()
+                        ? () -> DemoData.seedIfEmpty(db, 40, 2022L) : null;
+                AdminSetupDialog setup = new AdminSetupDialog(null, service, sample);
                 setup.setVisible(true);
                 if (setup.created() == null) {
-                    JOptionPane.showMessageDialog(null, "FarmersBW needs an admin account to start.");
                     System.exit(0);
                 }
+                window.showLogin();
             }
             window.setVisible(true);
         });
