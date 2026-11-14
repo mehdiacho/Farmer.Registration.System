@@ -461,7 +461,7 @@ String[] subDisDef = {" -- Sub-Districts -- "};
                 subList = new String[]{"Goodhope", "Jwaneng", "Kanye", "Mabutsane", "Moshupa"};
                 break;
 
-            case default:
+            default:
                 subList = new String[]{"Bobirwa", "Boteti", "Lerala", "Mahalapye"};
                 break;
         }

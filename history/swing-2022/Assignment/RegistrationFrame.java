@@ -376,7 +376,7 @@ public class RegistrationFrame extends JFrame implements ActionListener, ItemLis
                 subList = new String[]{"Goodhope", "Jwaneng", "Kanye", "Mabutsane", "Moshupa"};
                 break;
 
-            case default:
+            default:
                 subList = new String[]{"Bobirwa", "Boteti", "Lerala", "Mahalapye"};
                 break;
         }

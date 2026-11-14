@@ -363,7 +363,7 @@ public class PrintFarmerFrame extends JFrame implements ActionListener, ItemList
                     subList = new String[]{"Goodhope", "Jwaneng", "Kanye", "Mabutsane", "Moshupa"};
                     break;
 
-                case default:
+                default:
                     subList = new String[]{"Bobirwa", "Boteti", "Lerala", "Mahalapye"};
                     break;
             }
