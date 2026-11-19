@@ -40,7 +40,7 @@ public final class LoginPanel extends JPanel {
         heading.setLayout(new javax.swing.BoxLayout(heading, javax.swing.BoxLayout.Y_AXIS));
         heading.add(Ui.title("FarmersBW"));
         heading.add(Box.createVerticalStrut(4));
-        heading.add(Ui.subtitle("Ministry of Agriculture farmer register"));
+        heading.add(Ui.subtitle("A university project, not an official Ministry system"));
 
         JPanel actions = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
         actions.setOpaque(false);

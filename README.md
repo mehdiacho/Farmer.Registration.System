@@ -1,8 +1,14 @@
 # FarmersBW: farmer registration system
 
-A desktop app for registering farmers in Botswana. Farmers sign up and keep their own details current.
-A Ministry of Agriculture administrator approves or declines registrations, edits records, and exports
-reports filtered by district, sub-district, gender and status.
+> [!IMPORTANT]
+> **This is a university project, not a real system.** I built it as an undergraduate Java assignment at
+> BIUST. It is not affiliated with, endorsed by or used by the Ministry of Agriculture or any other
+> government body, and it is not a working register of farmers. All farmer data in it is fictional.
+
+A desktop app for registering farmers in Botswana, written as a coursework exercise. In the scenario the
+assignment set, farmers sign up and keep their own details current, and a Ministry of Agriculture
+administrator approves or declines registrations, edits records, and exports reports filtered by
+district, sub-district, gender and status.
 
 I first wrote it in 2022 as an undergraduate Java assignment, using Swing and MySQL. In 2026 I rebuilt it so
 it runs from a fresh clone with one command. The original code is kept in this repo (see
